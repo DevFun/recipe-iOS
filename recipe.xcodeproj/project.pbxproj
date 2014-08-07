@@ -397,6 +397,7 @@
 				23FDCC81199300C900FB71DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		23FDCC82199300C900FB71DA /* Build configuration list for PBXNativeTarget "recipeTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +406,7 @@
 				23FDCC84199300C900FB71DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
