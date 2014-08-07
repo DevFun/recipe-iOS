@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="14A299l" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RJi-5Y-BMO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--money list-->
@@ -147,7 +148,59 @@
                     <view key="view" contentMode="scaleToFill" id="zBg-Yc-M7G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="금액" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-E3-zaM">
+                                <rect key="frame" x="40" y="96" width="44" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="내역" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHV-HU-KMM">
+                                <rect key="frame" x="40" y="187" width="44" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="날짜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIq-0Y-Biz">
+                                <rect key="frame" x="40" y="288" width="44" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="ATi-hr-BXq">
+                                <rect key="frame" x="163" y="95" width="172" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="65Y-rM-SvM">
+                                <rect key="frame" x="168" y="186" width="172" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rvp-fU-a0G">
+                                <rect key="frame" x="40" y="342" width="305" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="429069756.300668">
+                                    <!--2014-08-07 02:02:36 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uIq-0Y-Biz" firstAttribute="leading" secondItem="zBg-Yc-M7G" secondAttribute="leadingMargin" constant="24" id="CTu-pO-H8I"/>
+                            <constraint firstItem="uIq-0Y-Biz" firstAttribute="top" secondItem="vHV-HU-KMM" secondAttribute="bottom" constant="32" id="DmS-DF-e2d"/>
+                            <constraint firstItem="vHV-HU-KMM" firstAttribute="leading" secondItem="zBg-Yc-M7G" secondAttribute="leadingMargin" constant="24" id="EJR-Ns-5df"/>
+                            <constraint firstItem="8Pf-E3-zaM" firstAttribute="top" secondItem="NgG-Pw-rzK" secondAttribute="bottom" constant="32" id="H6c-pJ-Ics"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="65Y-rM-SvM" secondAttribute="trailing" constant="24" id="H7D-eg-95b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rvp-fU-a0G" secondAttribute="trailing" constant="24" id="Hiq-kG-Reu"/>
+                            <constraint firstItem="65Y-rM-SvM" firstAttribute="top" secondItem="ATi-hr-BXq" secondAttribute="bottom" constant="32" id="KAc-nn-Ozg"/>
+                            <constraint firstItem="ATi-hr-BXq" firstAttribute="top" secondItem="NgG-Pw-rzK" secondAttribute="bottom" constant="32" id="Wjc-yl-YJw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ATi-hr-BXq" secondAttribute="trailing" constant="24" id="eJe-5j-dws"/>
+                            <constraint firstItem="rvp-fU-a0G" firstAttribute="top" secondItem="uIq-0Y-Biz" secondAttribute="bottom" constant="12" id="jQc-vA-5FL"/>
+                            <constraint firstItem="ATi-hr-BXq" firstAttribute="leading" secondItem="8Pf-E3-zaM" secondAttribute="trailing" constant="12" id="mAY-Fp-Lq5"/>
+                            <constraint firstItem="8Pf-E3-zaM" firstAttribute="leading" secondItem="zBg-Yc-M7G" secondAttribute="leadingMargin" constant="24" id="ta2-Fv-vZk"/>
+                            <constraint firstItem="vHV-HU-KMM" firstAttribute="top" secondItem="8Pf-E3-zaM" secondAttribute="bottom" constant="32" id="wXo-b4-eUp"/>
+                            <constraint firstItem="65Y-rM-SvM" firstAttribute="leading" secondItem="vHV-HU-KMM" secondAttribute="trailing" constant="12" id="x5p-Vg-VCa"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kxX-Nu-b0h"/>
                 </viewController>
