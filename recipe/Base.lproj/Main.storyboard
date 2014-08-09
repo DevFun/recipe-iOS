@@ -8,7 +8,7 @@
         <!--money list-->
         <scene sceneID="p8B-yu-U2x">
             <objects>
-                <tableViewController id="UYI-XP-17c" sceneMemberID="viewController">
+                <tableViewController id="UYI-XP-17c" customClass="pocketListTableViewController" customModule="recipe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="F7b-5d-aRz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
         <!--recipe-->
         <scene sceneID="T9S-jL-VoH">
             <objects>
-                <tableViewController id="Txq-Bj-5r6" sceneMemberID="viewController">
+                <tableViewController id="Txq-Bj-5r6" customClass="moneyListTableViewController" customModule="recipe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="f47-of-u5d">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="1596" y="-510"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Money View Controller-->
         <scene sceneID="mGq-v0-V9S">
             <objects>
-                <viewController id="5CV-4d-SMW" sceneMemberID="viewController">
+                <viewController id="5CV-4d-SMW" customClass="addMoneyViewController" customModule="recipe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NgG-Pw-rzK"/>
                         <viewControllerLayoutGuide type="bottom" id="xxQ-Im-6uq"/>
