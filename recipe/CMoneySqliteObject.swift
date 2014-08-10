@@ -45,11 +45,6 @@ class CMoneySqliteManager: NSObject {
             var zero2: String = ""
         }
         else {
-            var ATableNum = [Int32]()
-            var ANum = [Int32]()
-            var AStrLabel = [String]()
-            var AStrDate = [String]()
-            var AMoney = [Int32]()
             while sqlite3_step(state) == SQLITE_ROW {
                 var tableNum = sqlite3_column_int(state, 0)
                 var num = sqlite3_column_int(state, 1)
