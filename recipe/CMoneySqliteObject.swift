@@ -29,6 +29,7 @@ class CMoneySqliteManager: NSObject {
                 println("sqlite3_exec: create table")
             }
         }
+        println("init")
     }
     
     func selectAtDB() -> ( tableNum: [Int32], num: [Int32], strLabel: [String], strDate: [String], money: [Int32] ) {
@@ -78,8 +79,8 @@ class CMoneySqliteManager: NSObject {
         return (ATableNum, ANum, AStrLabel, AStrDate, AMoney)
     }
     
-    func insertDB(tableNum: Int32, label: String, date: String, money: Int32){
-        if sqlite3_exec(db, "INSERT INTO moneyList(tableNum, label, date , money ) values(\(tableNum), \(label), \(date), \(money));", nil, nil, &error) != SQLITE_OK {
+    func insertDB(tableNum: Int, label: String, date: String, money: Int){
+        if sqlite3_exec(db, "INSERT INTO moneyList(tableNum, label, date , money ) values(\(1), '\(label)', '\(date)', \(123123));", nil, nil, &error) != SQLITE_OK {
             println("sqlite3_exec: insert error")
         }
     }

@@ -10,10 +10,17 @@ import UIKit
 
 class addMoneyViewController: UIViewController {
 
+    @IBOutlet weak var moneyValue: UITextField!
+    @IBOutlet weak var labelValue: UITextField!
+    @IBOutlet weak var dateValue: UIDatePicker!
+    
+    var dbManager: CMoneySqliteManager = CMoneySqliteManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        var addButton = UIBarButtonItem(title: "Add", style: .Done, target: self, action: "addAction:")
+        self.navigationItem.rightBarButtonItem = addButton
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +29,12 @@ class addMoneyViewController: UIViewController {
         
     }
     
+    func addAction(sender: UIButton) {
+        dbManager.insertDB(12333333, label: labelValue.text, date: "2014-12-12", money: 1111)
+        self.navigationController.popViewControllerAnimated(true)
+    }
+    
+
     
     /*
     // MARK: - Navigation
