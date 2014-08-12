@@ -22,14 +22,6 @@ class moneyListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var aTotal = dbManager.selectAtMoney(pocketNum)
-        ANum = aTotal.num
-        AStrLabel = aTotal.strLabel
-        AStrDate = aTotal.strDate
-        AMoney = aTotal.money
-        
-        println("asdf")
-    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -67,6 +59,16 @@ class moneyListTableViewController: UITableViewController {
         cell!.textLabel.text = "\(self.pocketNum), \(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row]), \(self.AStrDate[indexPath.row]), \(self.AMoney[indexPath.row])"
 
         return cell
+    }
+    
+    func tableInit(inputPocketNum: Int) {
+        self.pocketNum = inputPocketNum
+        var aTotal = dbManager.selectAtMoney(self.pocketNum)
+        ANum = aTotal.num
+        AStrLabel = aTotal.strLabel
+        AStrDate = aTotal.strDate
+        AMoney = aTotal.money
+        self.tableView.reloadData()
     }
 
 

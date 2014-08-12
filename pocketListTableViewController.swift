@@ -86,7 +86,7 @@ class pocketListTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
         let nextView = self.storyboard.instantiateViewControllerWithIdentifier("moneyTableView") as moneyListTableViewController
-        nextView.pocketNum = indexPath.row
+        nextView.tableInit(indexPath.row+1)
         self.navigationController.pushViewController(nextView, animated: true)
     }
 

@@ -31,18 +31,21 @@ class addMoneyViewController: UIViewController {
     }
     
     func addAction(sender: UIButton) {
+        /*
         var beforeView = self.storyboard.instantiateViewControllerWithIdentifier("moneyTableView") as moneyListTableViewController
         beforeView.pocketNum = self.pocketNum
+        */
+        dbManager.insertMoney(self.pocketNum, label: labelValue.text, date: "2014-12-12", money: moneyValue.text.toInt()!)
         
-        dbManager.insertMoney(beforeView.pocketNum, label: labelValue.text, date: "2014-12-12", money: moneyValue.text.toInt()!)
-        
+        /*
         var aTotal = dbManager.selectAtMoney(beforeView.pocketNum)
         beforeView.ANum = aTotal.num
         beforeView.AStrLabel = aTotal.strLabel
         beforeView.AStrDate = aTotal.strDate
         beforeView.AMoney = aTotal.money
         beforeView.tableView.reloadData()
-        
+*/
+
         // self.presentViewController(beforeView, animated: true, completion: nil)
         // self.navigationController.popViewControllerAnimated(true)
         
