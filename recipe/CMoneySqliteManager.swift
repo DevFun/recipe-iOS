@@ -58,10 +58,10 @@ class CMoneySqliteManager: NSObject {
                 var money = sqlite3_column_int(state, 4)
                 
                 var data_label = NSData(bytes: label, length: 32)
-                var str_label = NSString(data: data_label, encoding: NSUTF8StringEncoding)
+                var str_label = NSString(data: data_label, encoding: NSASCIIStringEncoding)
                 
                 var data_date = NSData(bytes: date, length: 10)
-                var str_date = NSString(data: data_date, encoding: NSUTF8StringEncoding)
+                var str_date = NSString(data: data_date, encoding: NSASCIIStringEncoding)
                 
                 ANum.append(num)
                 AStrLabel.append(str_label)
