@@ -13,6 +13,7 @@ class addMoneyViewController: UIViewController {
     @IBOutlet weak var moneyValue: UITextField!
     @IBOutlet weak var labelValue: UITextField!
     @IBOutlet weak var dateValue: UIDatePicker!
+    var pocketNum = -1
     
     // var dbManager: CMoneySqliteManager = CMoneySqliteManager()
     
@@ -30,7 +31,17 @@ class addMoneyViewController: UIViewController {
     }
     
     func addAction(sender: UIButton) {
-        dbManager.insertMoney(12333333, label: labelValue.text, date: "2014-12-12", money: 1111)
+        var beforeView = self.storyboard.instantiateViewControllerWithIdentifier("moneyTableView") as moneyListTableViewController
+        
+        dbManager.insertMoney(beforeView.pocketNum, label: labelValue.text, date: "2014-12-12", money: moneyValue.text.toInt()!)
+
+        var aTotal = dbManager.selectAtMoney(beforeView.pocketNum)
+        beforeView.ANum = aTotal.num
+        beforeView.AStrLabel = aTotal.strLabel
+        beforeView.AStrDate = aTotal.strDate
+        beforeView.AMoney = aTotal.money
+        beforeView.tableView.reloadData()
+        
         self.navigationController.popViewControllerAnimated(true)
     }
     

@@ -46,6 +46,11 @@ class pocketListTableViewController: UITableViewController {
     
     func alertView(View: UIAlertView!, clickedButtonAtIndex: Int) {
         dbManager.insertPocket(View.textFieldAtIndex(0).text)
+        
+        var aTotal = dbManager.selectAtPocket()
+        ANum = aTotal.num
+        AStrLabel = aTotal.label
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +82,12 @@ class pocketListTableViewController: UITableViewController {
         cell!.textLabel.text = "\(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row])"
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+        let nextView = self.storyboard.instantiateViewControllerWithIdentifier("moneyTableView") as moneyListTableViewController
+        nextView.pocketNum = indexPath.row
+        self.navigationController.pushViewController(nextView, animated: true)
     }
 
     /*
