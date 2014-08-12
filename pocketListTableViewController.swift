@@ -9,15 +9,48 @@
 import UIKit
 
 class pocketListTableViewController: UITableViewController {
+    
+    // var dbManager: CMoneySqliteManager = CMoneySqliteManager()
+    var ANum = [Int32]()
+    var AStrLabel = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var aTotal = dbManager.selectAtPocket()
+        ANum = aTotal.num
+        AStrLabel = aTotal.label
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        var addButton = UIBarButtonItem(title: "Add", style: .Done, target: self, action: "addAction:")
+        self.navigationItem.rightBarButtonItem = addButton
+    }
+    
+    func addAction(sender: UIButton) {
+        // dbManager.insertDB(12333333, label: labelValue.text, date: "2014-12-12", money: 1111)
+        var alert = UIAlertView(title: "Add List", message: "제곧내", delegate: self, cancelButtonTitle: "OK")
+        alert.alertViewStyle = UIAlertViewStyle.PlainTextInput
+        var textField: UITextField = alert.textFieldAtIndex(0)
+        textField.keyboardType = UIKeyboardType.Default
+        textField.placeholder = "label"
+        
+        alert.show()
+        
+        self.navigationController.popViewControllerAnimated(true)
+        
+    }
+    
+    func alertView(View: UIAlertView!, clickedButtonAtIndex: Int) {
+        dbManager.insertPocket(View.textFieldAtIndex(0).text)
+        
+        var aTotal = dbManager.selectAtPocket()
+        ANum = aTotal.num
+        AStrLabel = aTotal.label
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,24 +63,32 @@ class pocketListTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.ANum.count
     }
 
-    /*
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
+        var cell = tableView.dequeueReusableCellWithIdentifier("pocketTable") as? UITableViewCell
+        
+        if cell == nil {
+            cell = UITableViewCell(style: .Default, reuseIdentifier: "pocketTable")
+        }
+        
+        cell!.textLabel.text = "\(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row])"
+        
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
+        let nextView = self.storyboard.instantiateViewControllerWithIdentifier("moneyTableView") as moneyListTableViewController
+        nextView.tableInit(indexPath.row+1)
+        self.navigationController.pushViewController(nextView, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

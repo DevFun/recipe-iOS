@@ -13,14 +13,17 @@ class addMoneyViewController: UIViewController {
     @IBOutlet weak var moneyValue: UITextField!
     @IBOutlet weak var labelValue: UITextField!
     @IBOutlet weak var dateValue: UIDatePicker!
+    var pocketNum = -1
     
-    var dbManager: CMoneySqliteManager = CMoneySqliteManager()
+    // var dbManager: CMoneySqliteManager = CMoneySqliteManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var addButton = UIBarButtonItem(title: "Add", style: .Done, target: self, action: "addAction:")
         self.navigationItem.rightBarButtonItem = addButton
+        
+        println("addMoneyViewController : \(self.pocketNum)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,9 +33,29 @@ class addMoneyViewController: UIViewController {
     }
     
     func addAction(sender: UIButton) {
-        dbManager.insertDB(12333333, label: labelValue.text, date: "2014-12-12", money: 1111)
+        /*
+        var beforeView = self.storyboard.instantiateViewControllerWithIdentifier("moneyTableView") as moneyListTableViewController
+        beforeView.pocketNum = self.pocketNum
+        */
+        dbManager.insertMoney(self.pocketNum, label: labelValue.text, date: "2014-12-12", money: moneyValue.text.toInt()!)
+        
+        /*
+        var aTotal = dbManager.selectAtMoney(beforeView.pocketNum)
+        beforeView.ANum = aTotal.num
+        beforeView.AStrLabel = aTotal.strLabel
+        beforeView.AStrDate = aTotal.strDate
+        beforeView.AMoney = aTotal.money
+        beforeView.tableView.reloadData()
+*/
+
+        // self.presentViewController(beforeView, animated: true, completion: nil)
+        // self.navigationController.popViewControllerAnimated(true)
+        
+        self.navigationController.popToViewController(self, animated: true)   // Check this code
+        
         self.navigationController.popViewControllerAnimated(true)
-    }
+        
+}
     
 
     

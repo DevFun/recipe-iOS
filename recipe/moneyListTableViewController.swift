@@ -10,24 +10,18 @@ import UIKit
 
 class moneyListTableViewController: UITableViewController {
     
-    var dbManager: CMoneySqliteManager = CMoneySqliteManager()
+    // var dbManager: CMoneySqliteManager = CMoneySqliteManager()
     
-    var ATableNum = [Int32]()
     var ANum = [Int32]()
     var AStrLabel = [String]()
     var AStrDate = [String]()
     var AMoney = [Int32]()
+    
+    var pocketNum = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var aTotal = dbManager.selectAtDB()
-        ATableNum = aTotal.tableNum
-        ANum = aTotal.num
-        AStrLabel = aTotal.strLabel
-        AStrDate = aTotal.strDate
-        AMoney = aTotal.money
-    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -56,15 +50,26 @@ class moneyListTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        var cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier") as? UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("moneyTable") as? UITableViewCell
         
         if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: "reuseIdentifier")
+            cell = UITableViewCell(style: .Default, reuseIdentifier: "moneyTable")
         }
 
-        cell!.textLabel.text = "\(self.ATableNum[indexPath.row]), \(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row]), \(self.AStrDate[indexPath.row]), \(self.AMoney[indexPath.row])"
+        cell!.textLabel.text = "\(self.pocketNum), \(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row]), \(self.AStrDate[indexPath.row]), \(self.AMoney[indexPath.row])"
 
         return cell
+    }
+    
+    func tableInit(inputPocketNum: Int) {
+        self.pocketNum = inputPocketNum
+        var aTotal = dbManager.selectAtMoney(self.pocketNum)
+        ANum = aTotal.num
+        AStrLabel = aTotal.strLabel
+        AStrDate = aTotal.strDate
+        AMoney = aTotal.money
+        self.tableView.reloadData()
+        println("moneyListTableViewController : \(self.pocketNum)")
     }
 
 
@@ -103,14 +108,18 @@ class moneyListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if segue!.identifier == "addMoneySegue" {
+            var nextView = segue.destinationViewController as addMoneyViewController
+            nextView.pocketNum = self.pocketNum
+        }
     }
-    */
+    
 
 }
