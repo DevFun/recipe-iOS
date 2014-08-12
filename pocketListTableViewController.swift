@@ -26,8 +26,20 @@ class pocketListTableViewController: UITableViewController {
     
     func addAction(sender: UIButton) {
         // dbManager.insertDB(12333333, label: labelValue.text, date: "2014-12-12", money: 1111)
-        dbManager.insertPocket("asdf")
+        var alert = UIAlertView(title: "Add List", message: "제곧내", delegate: self, cancelButtonTitle: "OK")
+        alert.alertViewStyle = UIAlertViewStyle.PlainTextInput
+        var textField: UITextField = alert.textFieldAtIndex(0)
+        textField.keyboardType = UIKeyboardType.Default
+        textField.placeholder = "label"
+        
+        alert.show()
+        
         self.navigationController.popViewControllerAnimated(true)
+        
+    }
+    
+    func alertView(View: UIAlertView!, clickedButtonAtIndex: Int) {
+        dbManager.insertPocket(View.textFieldAtIndex(0).text)
     }
 
     override func didReceiveMemoryWarning() {
