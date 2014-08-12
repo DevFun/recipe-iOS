@@ -9,6 +9,8 @@
 import UIKit
 
 class pocketListTableViewController: UITableViewController {
+    
+    // var dbManager: CMoneySqliteManager = CMoneySqliteManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,14 @@ class pocketListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        var addButton = UIBarButtonItem(title: "Add", style: .Done, target: self, action: "addAction:")
+        self.navigationItem.rightBarButtonItem = addButton
+    }
+    
+    func addAction(sender: UIButton) {
+        // dbManager.insertDB(12333333, label: labelValue.text, date: "2014-12-12", money: 1111)
+        dbManager.insertPocket("asdf")
+        self.navigationController.popViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {

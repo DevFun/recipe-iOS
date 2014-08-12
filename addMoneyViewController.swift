@@ -14,7 +14,7 @@ class addMoneyViewController: UIViewController {
     @IBOutlet weak var labelValue: UITextField!
     @IBOutlet weak var dateValue: UIDatePicker!
     
-    var dbManager: CMoneySqliteManager = CMoneySqliteManager()
+    // var dbManager: CMoneySqliteManager = CMoneySqliteManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class addMoneyViewController: UIViewController {
     }
     
     func addAction(sender: UIButton) {
-        dbManager.insertDB(12333333, label: labelValue.text, date: "2014-12-12", money: 1111)
+        dbManager.insertMoney(12333333, label: labelValue.text, date: "2014-12-12", money: 1111)
         self.navigationController.popViewControllerAnimated(true)
     }
     

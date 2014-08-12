@@ -10,19 +10,19 @@ import UIKit
 
 class moneyListTableViewController: UITableViewController {
     
-    var dbManager: CMoneySqliteManager = CMoneySqliteManager()
+    // var dbManager: CMoneySqliteManager = CMoneySqliteManager()
     
-    var ATableNum = [Int32]()
     var ANum = [Int32]()
     var AStrLabel = [String]()
     var AStrDate = [String]()
     var AMoney = [Int32]()
+    
+    var pocketNum = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var aTotal = dbManager.selectAtDB()
-        ATableNum = aTotal.tableNum
+        var aTotal = dbManager.selectAtMoney(pocketNum)
         ANum = aTotal.num
         AStrLabel = aTotal.strLabel
         AStrDate = aTotal.strDate
@@ -62,7 +62,7 @@ class moneyListTableViewController: UITableViewController {
             cell = UITableViewCell(style: .Default, reuseIdentifier: "reuseIdentifier")
         }
 
-        cell!.textLabel.text = "\(self.ATableNum[indexPath.row]), \(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row]), \(self.AStrDate[indexPath.row]), \(self.AMoney[indexPath.row])"
+        cell!.textLabel.text = "\(self.pocketNum), \(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row]), \(self.AStrDate[indexPath.row]), \(self.AMoney[indexPath.row])"
 
         return cell
     }
