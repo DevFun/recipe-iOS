@@ -69,6 +69,7 @@ class moneyListTableViewController: UITableViewController {
         AStrDate = aTotal.strDate
         AMoney = aTotal.money
         self.tableView.reloadData()
+        println("moneyListTableViewController : \(self.pocketNum)")
     }
 
 
@@ -107,14 +108,18 @@ class moneyListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if segue!.identifier == "addMoneySegue" {
+            var nextView = segue.destinationViewController as addMoneyViewController
+            nextView.pocketNum = self.pocketNum
+        }
     }
-    */
+    
 
 }

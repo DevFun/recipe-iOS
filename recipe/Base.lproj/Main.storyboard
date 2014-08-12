@@ -135,7 +135,7 @@
                     <navigationItem key="navigationItem" title="recipe" id="djg-PS-vrd">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="wpx-RO-sAM">
                             <connections>
-                                <segue destination="5CV-4d-SMW" kind="push" id="TVR-Gy-Dbl"/>
+                                <segue destination="5CV-4d-SMW" kind="push" identifier="addMoneySegue" id="TVR-Gy-Dbl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -152,7 +152,7 @@
                         <viewControllerLayoutGuide type="top" id="NgG-Pw-rzK"/>
                         <viewControllerLayoutGuide type="bottom" id="xxQ-Im-6uq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zBg-Yc-M7G">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="addMoneyView" id="zBg-Yc-M7G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
