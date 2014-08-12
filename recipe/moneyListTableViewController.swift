@@ -56,10 +56,10 @@ class moneyListTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        var cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier") as? UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("moneyTable") as? UITableViewCell
         
         if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: "reuseIdentifier")
+            cell = UITableViewCell(style: .Default, reuseIdentifier: "moneyTable")
         }
 
         cell!.textLabel.text = "\(self.pocketNum), \(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row]), \(self.AStrDate[indexPath.row]), \(self.AMoney[indexPath.row])"

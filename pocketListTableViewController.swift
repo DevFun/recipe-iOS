@@ -11,9 +11,15 @@ import UIKit
 class pocketListTableViewController: UITableViewController {
     
     // var dbManager: CMoneySqliteManager = CMoneySqliteManager()
+    var ANum = [Int32]()
+    var AStrLabel = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var aTotal = dbManager.selectAtPocket()
+        ANum = aTotal.num
+        AStrLabel = aTotal.label
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -52,24 +58,26 @@ class pocketListTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.ANum.count
     }
 
-    /*
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
+        var cell = tableView.dequeueReusableCellWithIdentifier("pocketTable") as? UITableViewCell
+        
+        if cell == nil {
+            cell = UITableViewCell(style: .Default, reuseIdentifier: "pocketTable")
+        }
+        
+        cell!.textLabel.text = "\(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row])"
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

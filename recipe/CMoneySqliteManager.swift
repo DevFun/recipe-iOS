@@ -15,7 +15,7 @@ class CMoneySqliteManager: NSObject {
     var error: UnsafeMutablePointer<Int8> = nil
     
     override init(){
-        var path = "/Users/Kyoseung/Workspace/application/recipe-iOS/money.sqlite3" // Your .sqlite3 path
+        var path = "/Users/Kyoseung/Workspace/application/recipe-iOS/money.db" // Your .sqlite3 path
         
         var result = sqlite3_open(path, &db)
         
