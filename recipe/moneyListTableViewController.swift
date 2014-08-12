@@ -27,6 +27,8 @@ class moneyListTableViewController: UITableViewController {
         AStrLabel = aTotal.strLabel
         AStrDate = aTotal.strDate
         AMoney = aTotal.money
+        
+        println("asdf")
     
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
