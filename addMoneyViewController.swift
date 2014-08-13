@@ -29,8 +29,6 @@ class addMoneyViewController: UIViewController {
         
         var addButton = UIBarButtonItem(title: "Add", style: .Done, target: self, action: "addAction:")
         self.navigationItem.rightBarButtonItem = addButton
-        
-        println("addMoneyViewController : \(self.pocketNum)")
     }
 
     override func didReceiveMemoryWarning() {

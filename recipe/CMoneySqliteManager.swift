@@ -33,7 +33,6 @@ class CMoneySqliteManager: NSObject {
                 println("sqlite3_exec: create table 2")
             }
         }
-        println("init")
     }
     
     func selectAtMoney(tableNum: Int) -> (num: [Int32], strLabel: [String], strDate: [String], money: [Int32] ) {

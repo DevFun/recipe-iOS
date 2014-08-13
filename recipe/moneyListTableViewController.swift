@@ -74,7 +74,6 @@ class moneyListTableViewController: UITableViewController, addMoneyViewControlle
         AStrDate = aTotal.strDate
         AMoney = aTotal.money
         self.tableView.reloadData()
-        println("moneyListTableViewController : \(self.pocketNum)")
     }
     
     
