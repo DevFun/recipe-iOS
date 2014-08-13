@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol addMoneyViewControllerDelegate{
+    func endPopAction(controller: addMoneyViewController, pocketNum: Int)
+}
+
+
 class addMoneyViewController: UIViewController {
 
     @IBOutlet weak var moneyValue: UITextField!
     @IBOutlet weak var labelValue: UITextField!
     @IBOutlet weak var dateValue: UIDatePicker!
     var pocketNum = -1
+    
+    var delegate: addMoneyViewControllerDelegate? = nil
     
     // var dbManager: CMoneySqliteManager = CMoneySqliteManager()
     
@@ -22,8 +29,6 @@ class addMoneyViewController: UIViewController {
         
         var addButton = UIBarButtonItem(title: "Add", style: .Done, target: self, action: "addAction:")
         self.navigationItem.rightBarButtonItem = addButton
-        
-        println("addMoneyViewController : \(self.pocketNum)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,8 +56,11 @@ class addMoneyViewController: UIViewController {
         // self.presentViewController(beforeView, animated: true, completion: nil)
         // self.navigationController.popViewControllerAnimated(true)
         
-        self.navigationController.popToViewController(self, animated: true)   // Check this code
+        if self.delegate != nil {
+            self.delegate?.endPopAction(self, pocketNum: self.pocketNum)
+        }
         
+        self.navigationController.popToViewController(self, animated: true)   // Check this code
         self.navigationController.popViewControllerAnimated(true)
         
 }
