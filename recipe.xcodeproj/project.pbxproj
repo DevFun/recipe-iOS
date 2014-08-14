@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		236E2CDB199C4A4900887352 /* addMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E2CD9199C4A4900887352 /* addMoneyViewController.swift */; };
+		236E2CDC199C4A4900887352 /* pocketListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E2CDA199C4A4900887352 /* pocketListTableViewController.swift */; };
 		23F5475F19964ADE00FA31CF /* moneyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5475E19964ADE00FA31CF /* moneyListTableViewController.swift */; };
-		23F5476119964AF500FA31CF /* addMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5476019964AF500FA31CF /* addMoneyViewController.swift */; };
-		23F5476319964B2D00FA31CF /* pocketListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5476219964B2D00FA31CF /* pocketListTableViewController.swift */; };
 		23F547661996516E00FA31CF /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F547651996516E00FA31CF /* libsqlite3.0.dylib */; };
 		23F5476819966A6500FA31CF /* CMoneySqliteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5476719966A6500FA31CF /* CMoneySqliteManager.swift */; };
 		23FDCC69199300C900FB71DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FDCC68199300C900FB71DA /* AppDelegate.swift */; };
@@ -30,9 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		236E2CD9199C4A4900887352 /* addMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addMoneyViewController.swift; sourceTree = "<group>"; };
+		236E2CDA199C4A4900887352 /* pocketListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pocketListTableViewController.swift; sourceTree = "<group>"; };
 		23F5475E19964ADE00FA31CF /* moneyListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = moneyListTableViewController.swift; sourceTree = "<group>"; };
-		23F5476019964AF500FA31CF /* addMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addMoneyViewController.swift; path = ../addMoneyViewController.swift; sourceTree = "<group>"; };
-		23F5476219964B2D00FA31CF /* pocketListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = pocketListTableViewController.swift; path = ../pocketListTableViewController.swift; sourceTree = "<group>"; };
 		23F5476419964FFC00FA31CF /* sqlite3Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sqlite3Bridge.h; sourceTree = "<group>"; };
 		23F547651996516E00FA31CF /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		23F5476719966A6500FA31CF /* CMoneySqliteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMoneySqliteManager.swift; sourceTree = "<group>"; };
@@ -91,9 +91,9 @@
 				23F5476419964FFC00FA31CF /* sqlite3Bridge.h */,
 				23FDCC68199300C900FB71DA /* AppDelegate.swift */,
 				23FDCC6A199300C900FB71DA /* ViewController.swift */,
-				23F5476019964AF500FA31CF /* addMoneyViewController.swift */,
+				236E2CD9199C4A4900887352 /* addMoneyViewController.swift */,
 				23F5475E19964ADE00FA31CF /* moneyListTableViewController.swift */,
-				23F5476219964B2D00FA31CF /* pocketListTableViewController.swift */,
+				236E2CDA199C4A4900887352 /* pocketListTableViewController.swift */,
 				23F5476719966A6500FA31CF /* CMoneySqliteManager.swift */,
 				23FDCC6C199300C900FB71DA /* Main.storyboard */,
 				23FDCC6F199300C900FB71DA /* Images.xcassets */,
@@ -227,11 +227,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				23F5475F19964ADE00FA31CF /* moneyListTableViewController.swift in Sources */,
-				23F5476319964B2D00FA31CF /* pocketListTableViewController.swift in Sources */,
 				23FDCC6B199300C900FB71DA /* ViewController.swift in Sources */,
 				23FDCC69199300C900FB71DA /* AppDelegate.swift in Sources */,
-				23F5476119964AF500FA31CF /* addMoneyViewController.swift in Sources */,
+				236E2CDB199C4A4900887352 /* addMoneyViewController.swift in Sources */,
 				23F5476819966A6500FA31CF /* CMoneySqliteManager.swift in Sources */,
+				236E2CDC199C4A4900887352 /* pocketListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

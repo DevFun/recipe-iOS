@@ -31,7 +31,6 @@ class moneyListTableViewController: UITableViewController, addMoneyViewControlle
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        println(pocketNum)
     }
     
     override func didReceiveMemoryWarning() {
