@@ -61,15 +61,23 @@ class CMoneySqliteManager: NSObject {
                 var date = sqlite3_column_text(state, 3)
                 var money = sqlite3_column_int(state, 4)
                 
+                /*
                 var data_label = NSData(bytes: label, length: 32)
                 var str_label = NSString(data: data_label, encoding: NSASCIIStringEncoding)
+                */
                 
+                var str_label = String.fromCString(UnsafePointer<CChar>(label))
+                
+                /*
                 var data_date = NSData(bytes: date, length: 10)
                 var str_date = NSString(data: data_date, encoding: NSASCIIStringEncoding)
+                */
                 
+                var str_date = String.fromCString(UnsafePointer<CChar>(date))
+            
                 ANum.append(num)
-                AStrLabel.append(str_label)
-                AStrDate.append(str_date)
+                AStrLabel.append(str_label!)
+                AStrDate.append(str_date!)
                 AMoney.append(money)
             }
         }
@@ -114,5 +122,4 @@ class CMoneySqliteManager: NSObject {
 }
 
 var dbManager: CMoneySqliteManager = CMoneySqliteManager()
-
 
