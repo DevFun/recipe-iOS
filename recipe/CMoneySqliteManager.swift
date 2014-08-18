@@ -123,4 +123,3 @@ class CMoneySqliteManager: NSObject {
 
 var dbManager: CMoneySqliteManager = CMoneySqliteManager()
 
-
