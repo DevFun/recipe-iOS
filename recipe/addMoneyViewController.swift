@@ -14,7 +14,6 @@ protocol addMoneyViewControllerDelegate{
 
 
 class addMoneyViewController: UIViewController {
-
     @IBOutlet weak var moneyValue: UITextField!
     @IBOutlet weak var labelValue: UITextField!
     @IBOutlet weak var dateValue: UIDatePicker!
@@ -29,8 +28,24 @@ class addMoneyViewController: UIViewController {
         
         var addButton = UIBarButtonItem(title: "Add", style: .Done, target: self, action: "addAction:")
         self.navigationItem.rightBarButtonItem = addButton
+        
+        var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        var swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        var swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        var swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
+        self.view.addGestureRecognizer(swipeDown)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,7 +58,7 @@ class addMoneyViewController: UIViewController {
         beforeView.pocketNum = self.pocketNum
         */
         dbManager.insertMoney(self.pocketNum, label: labelValue.text, date: "2014-12-12", money: moneyValue.text.toInt()!)
-        
+
         /*
         var aTotal = dbManager.selectAtMoney(beforeView.pocketNum)
         beforeView.ANum = aTotal.num
@@ -51,8 +66,8 @@ class addMoneyViewController: UIViewController {
         beforeView.AStrDate = aTotal.strDate
         beforeView.AMoney = aTotal.money
         beforeView.tableView.reloadData()
-*/
-
+        */
+        
         // self.presentViewController(beforeView, animated: true, completion: nil)
         // self.navigationController.popViewControllerAnimated(true)
         
@@ -63,18 +78,35 @@ class addMoneyViewController: UIViewController {
         self.navigationController.popToViewController(self, animated: true)   // Check this code
         self.navigationController.popViewControllerAnimated(true)
         
-}
-    
-
+    }
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Right:
+                println("Right")
+                self.navigationController.popViewControllerAnimated(true)
+            case UISwipeGestureRecognizerDirection.Left:
+                println("Left")
+            case UISwipeGestureRecognizerDirection.Up:
+                println("Up")
+            case UISwipeGestureRecognizerDirection.Down:
+                println("Down")
+            default:
+                break
+            }
+        }
+    }
     
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
