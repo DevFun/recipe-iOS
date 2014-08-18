@@ -192,6 +192,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="uIq-0Y-Biz" firstAttribute="leading" secondItem="zBg-Yc-M7G" secondAttribute="leadingMargin" constant="24" id="CTu-pO-H8I"/>
                             <constraint firstItem="uIq-0Y-Biz" firstAttribute="top" secondItem="vHV-HU-KMM" secondAttribute="bottom" constant="32" id="DmS-DF-e2d"/>
