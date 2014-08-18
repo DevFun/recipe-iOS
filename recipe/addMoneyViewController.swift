@@ -109,11 +109,9 @@ class addMoneyViewController: UIViewController {
             case UISwipeGestureRecognizerDirection.Up:
                 println("Up")
                 addAction(true)
-                self.navigationController.popViewControllerAnimated(true)
             case UISwipeGestureRecognizerDirection.Down:
                 println("Down")
                 addAction(false)
-                self.navigationController.popViewControllerAnimated(true)
             default:
                 break
             }
