@@ -52,6 +52,21 @@ class addMoneyViewController: UIViewController {
         
     }
     
+    func addAction(outMoney: Bool) {
+        
+        if outMoney {
+            dbManager.insertMoney(self.pocketNum, label: labelValue.text, date: "2014-12-12", money: -(moneyValue.text.toInt()!))
+        }else {
+            dbManager.insertMoney(self.pocketNum, label: labelValue.text, date: "2014-12-12", money: moneyValue.text.toInt()!)
+        }
+        
+        if self.delegate != nil {
+            self.delegate?.endPopAction(self, pocketNum: self.pocketNum)
+        }
+        
+        self.navigationController.popToViewController(self, animated: true)   // Check this code
+        self.navigationController.popViewControllerAnimated(true)
+    }
     func addAction(sender: UIButton) {
         /*
         var beforeView = self.storyboard.instantiateViewControllerWithIdentifier("moneyTableView") as moneyListTableViewController
@@ -91,8 +106,12 @@ class addMoneyViewController: UIViewController {
                 println("Left")
             case UISwipeGestureRecognizerDirection.Up:
                 println("Up")
+                addAction(true)
+                self.navigationController.popViewControllerAnimated(true)
             case UISwipeGestureRecognizerDirection.Down:
                 println("Down")
+                addAction(false)
+                self.navigationController.popViewControllerAnimated(true)
             default:
                 break
             }
