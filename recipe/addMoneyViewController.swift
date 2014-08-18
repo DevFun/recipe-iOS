@@ -42,7 +42,10 @@ class addMoneyViewController: UIViewController {
         var beforeView = self.storyboard.instantiateViewControllerWithIdentifier("moneyTableView") as moneyListTableViewController
         beforeView.pocketNum = self.pocketNum
         */
-        dbManager.insertMoney(self.pocketNum, label: labelValue.text, date: "2014-12-12", money: moneyValue.text.toInt()!)
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        dbManager.insertMoney(self.pocketNum, label: labelValue.text, date: dateFormatter.stringFromDate(self.dateValue.date), money: moneyValue.text.toInt()!)
         
         /*
         var aTotal = dbManager.selectAtMoney(beforeView.pocketNum)
