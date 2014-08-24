@@ -31,6 +31,9 @@ class moneyListTableViewController: UITableViewController, addMoneyViewControlle
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        var swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeLeft)
     }
     
     override func didReceiveMemoryWarning() {
@@ -125,5 +128,23 @@ class moneyListTableViewController: UITableViewController, addMoneyViewControlle
         }
     }
     
-    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Right:
+                println("Right")
+            case UISwipeGestureRecognizerDirection.Left:
+                println("Left")
+                performSegueWithIdentifier("addMoneySegue", sender: self)
+            case UISwipeGestureRecognizerDirection.Up:
+                println("Up")
+            case UISwipeGestureRecognizerDirection.Down:
+                println("Down")
+            default:
+                break
+            }
+        }
+    }
 }
