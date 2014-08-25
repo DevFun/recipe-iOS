@@ -17,6 +17,7 @@ class addMoneyViewController: UIViewController {
     @IBOutlet weak var moneyValue: UITextField!
     @IBOutlet weak var labelValue: UITextField!
     @IBOutlet weak var dateValue: UIDatePicker!
+    @IBOutlet weak var addMoneyView: UIView!
     var pocketNum = -1
     
     var delegate: addMoneyViewControllerDelegate? = nil
@@ -44,6 +45,8 @@ class addMoneyViewController: UIViewController {
         var swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeDown.direction = UISwipeGestureRecognizerDirection.Down
         self.view.addGestureRecognizer(swipeDown)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -112,9 +115,8 @@ class addMoneyViewController: UIViewController {
                     delay: 0.0,
                     options: .CurveEaseInOut,
                     animations: {
-                        self.view.frame.offset(dx: 0, dy: -(self.view.frame.height))
-                        self.view.backgroundColor = UIColor.whiteColor()
-                        println("fucking animation")
+                        self.addMoneyView.frame.offset(dx: 0, dy: -(self.addMoneyView.frame.height))
+                        println("up animation")
                     }, completion: { finished in
                         self.addAction(true)
                 })
@@ -122,11 +124,10 @@ class addMoneyViewController: UIViewController {
                 println("Down")
                 UIView.animateWithDuration(1.0,
                     delay: 0.0,
-                    options: .CurveEaseInOut,
+                    options: .CurveLinear,
                     animations: {
-                        self.view.frame.offset(dx: 0, dy: self.view.frame.height)
-                        self.view.backgroundColor = UIColor.whiteColor()
-                        println("fucking animation")
+                        self.addMoneyView.frame.offset(dx: 0, dy: self.addMoneyView.frame.height)
+                        println("Down animation")
                     }, completion: { finished in
                         self.addAction(true)
                 })

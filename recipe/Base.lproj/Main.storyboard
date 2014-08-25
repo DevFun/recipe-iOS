@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329r" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RJi-5Y-BMO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
-        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--money list-->
@@ -152,76 +151,117 @@
                         <viewControllerLayoutGuide type="top" id="NgG-Pw-rzK"/>
                         <viewControllerLayoutGuide type="bottom" id="xxQ-Im-6uq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="addMoneyView" id="zBg-Yc-M7G">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="backgroudView" id="zBg-Yc-M7G" userLabel="backgroundView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="금액" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-E3-zaM">
-                                <rect key="frame" x="40" y="96" width="44" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="내역" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHV-HU-KMM">
-                                <rect key="frame" x="40" y="187" width="44" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="날짜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIq-0Y-Biz">
-                                <rect key="frame" x="40" y="288" width="44" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="ATi-hr-BXq">
-                                <rect key="frame" x="163" y="95" width="172" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rvp-fU-a0G">
-                                <rect key="frame" x="40" y="342" width="305" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="429069756.300668">
-                                    <!--2014-08-07 02:02:36 +0000-->
-                                </date>
-                            </datePicker>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="65Y-rM-SvM">
-                                <rect key="frame" x="163" y="187" width="172" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <view contentMode="scaleToFill" restorationIdentifier="addMoneyView" translatesAutoresizingMaskIntoConstraints="NO" id="mZa-Y2-NnZ" userLabel="addMoneyView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="금액" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-E3-zaM">
+                                        <rect key="frame" x="40" y="96" width="44" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="33" y="142" width="42" height="29"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내역" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHV-HU-KMM">
+                                        <rect key="frame" x="40" y="187" width="44" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="33" y="211" width="42" height="29"/>
+                                        </variation>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="65Y-rM-SvM" userLabel="money">
+                                        <rect key="frame" x="163" y="187" width="172" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="99" y="142" width="266" height="30"/>
+                                        </variation>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="ATi-hr-BXq" userLabel="label">
+                                        <rect key="frame" x="163" y="95" width="172" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" label="value"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="99" y="211" width="266" height="30"/>
+                                        </variation>
+                                    </textField>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rvp-fU-a0G">
+                                        <rect key="frame" x="40" y="342" width="305" height="162"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="429069756.300668">
+                                            <!--2014-08-07 02:02:36 +0000-->
+                                        </date>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="40" y="342" width="320" height="162"/>
+                                        </variation>
+                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIq-0Y-Biz">
+                                        <rect key="frame" x="40" y="288" width="44" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="33" y="292" width="42" height="29"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="8Pf-E3-zaM"/>
+                                        <exclude reference="vHV-HU-KMM"/>
+                                        <exclude reference="65Y-rM-SvM"/>
+                                        <exclude reference="ATi-hr-BXq"/>
+                                        <exclude reference="rvp-fU-a0G"/>
+                                        <exclude reference="uIq-0Y-Biz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                    <mask key="subviews">
+                                        <include reference="8Pf-E3-zaM"/>
+                                        <include reference="vHV-HU-KMM"/>
+                                        <include reference="65Y-rM-SvM"/>
+                                        <include reference="ATi-hr-BXq"/>
+                                        <include reference="rvp-fU-a0G"/>
+                                        <include reference="uIq-0Y-Biz"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="uIq-0Y-Biz" firstAttribute="leading" secondItem="zBg-Yc-M7G" secondAttribute="leadingMargin" constant="24" id="CTu-pO-H8I"/>
-                            <constraint firstItem="uIq-0Y-Biz" firstAttribute="top" secondItem="vHV-HU-KMM" secondAttribute="bottom" constant="32" id="DmS-DF-e2d"/>
-                            <constraint firstItem="vHV-HU-KMM" firstAttribute="leading" secondItem="zBg-Yc-M7G" secondAttribute="leadingMargin" constant="24" id="EJR-Ns-5df"/>
-                            <constraint firstItem="8Pf-E3-zaM" firstAttribute="top" secondItem="NgG-Pw-rzK" secondAttribute="bottom" constant="32" id="H6c-pJ-Ics"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="65Y-rM-SvM" secondAttribute="trailing" constant="24" id="H7D-eg-95b"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rvp-fU-a0G" secondAttribute="trailing" constant="24" id="Hiq-kG-Reu"/>
-                            <constraint firstItem="65Y-rM-SvM" firstAttribute="top" secondItem="ATi-hr-BXq" secondAttribute="bottom" constant="32" id="KAc-nn-Ozg"/>
-                            <constraint firstItem="ATi-hr-BXq" firstAttribute="top" secondItem="NgG-Pw-rzK" secondAttribute="bottom" constant="32" id="Wjc-yl-YJw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ATi-hr-BXq" secondAttribute="trailing" constant="24" id="eJe-5j-dws"/>
-                            <constraint firstItem="rvp-fU-a0G" firstAttribute="top" secondItem="uIq-0Y-Biz" secondAttribute="bottom" constant="12" id="jQc-vA-5FL"/>
-                            <constraint firstItem="ATi-hr-BXq" firstAttribute="leading" secondItem="8Pf-E3-zaM" secondAttribute="trailing" constant="12" id="mAY-Fp-Lq5"/>
-                            <constraint firstItem="8Pf-E3-zaM" firstAttribute="leading" secondItem="zBg-Yc-M7G" secondAttribute="leadingMargin" constant="24" id="ta2-Fv-vZk"/>
-                            <constraint firstItem="vHV-HU-KMM" firstAttribute="top" secondItem="8Pf-E3-zaM" secondAttribute="bottom" constant="32" id="wXo-b4-eUp"/>
-                            <constraint firstItem="65Y-rM-SvM" firstAttribute="leading" secondItem="vHV-HU-KMM" secondAttribute="trailing" constant="12" id="x5p-Vg-VCa"/>
-                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="mZa-Y2-NnZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="mZa-Y2-NnZ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="kxX-Nu-b0h"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addMoneyView" destination="mZa-Y2-NnZ" id="FIi-xO-6uD"/>
                         <outlet property="dateValue" destination="rvp-fU-a0G" id="3fw-Qw-zak"/>
-                        <outlet property="labelValue" destination="65Y-rM-SvM" id="F7A-5d-U7H"/>
-                        <outlet property="moneyValue" destination="ATi-hr-BXq" id="ce3-fs-GeU"/>
+                        <outlet property="labelValue" destination="ATi-hr-BXq" id="wKx-rP-Qdc"/>
+                        <outlet property="moneyValue" destination="65Y-rM-SvM" id="s9i-l7-VJg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3r-Cp-3G2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2378" y="-510"/>
+            <point key="canvasLocation" x="2377.5" y="-510"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gcL-UR-Esd">
