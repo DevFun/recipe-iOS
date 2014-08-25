@@ -32,7 +32,15 @@ class pocketListTableViewController: UITableViewController {
     
     func addAction(sender: UIButton) {
         // dbManager.insertDB(12333333, label: labelValue.text, date: "2014-12-12", money: 1111)
-        var alert = UIAlertView(title: "Add List", message: "제곧내", delegate: self, cancelButtonTitle: "OK")
+        
+        //var alert = UIAlertView(title: "Add List", message: "제곧내", delegate: self, cancelButtonTitle: "OK", otherButtonTitles: "Cancel", nil)
+        
+        var alert = UIAlertView()
+        alert.title = "title"
+        alert.message = "message"
+        alert.addButtonWithTitle("OK")
+        alert.addButtonWithTitle("Cancel")
+        alert.delegate = self
         alert.alertViewStyle = UIAlertViewStyle.PlainTextInput
         var textField: UITextField = alert.textFieldAtIndex(0)
         textField.keyboardType = UIKeyboardType.Default
@@ -45,12 +53,14 @@ class pocketListTableViewController: UITableViewController {
     }
     
     func alertView(View: UIAlertView!, clickedButtonAtIndex: Int) {
-        dbManager.insertPocket(View.textFieldAtIndex(0).text)
-        
-        var aTotal = dbManager.selectAtPocket()
-        ANum = aTotal.num
-        AStrLabel = aTotal.label
-        self.tableView.reloadData()
+        if clickedButtonAtIndex == 0 {
+            dbManager.insertPocket(View.textFieldAtIndex(0).text)
+            
+            var aTotal = dbManager.selectAtPocket()
+            ANum = aTotal.num
+            AStrLabel = aTotal.label
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
