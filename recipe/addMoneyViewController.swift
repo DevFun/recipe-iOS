@@ -108,10 +108,28 @@ class addMoneyViewController: UIViewController {
                 println("Left")
             case UISwipeGestureRecognizerDirection.Up:
                 println("Up")
-                addAction(true)
+                UIView.animateWithDuration(1.0,
+                    delay: 0.0,
+                    options: .CurveEaseInOut,
+                    animations: {
+                        self.view.frame.offset(dx: 0, dy: -(self.view.frame.height))
+                        self.view.backgroundColor = UIColor.whiteColor()
+                        println("fucking animation")
+                    }, completion: { finished in
+                        self.addAction(true)
+                })
             case UISwipeGestureRecognizerDirection.Down:
                 println("Down")
-                addAction(false)
+                UIView.animateWithDuration(1.0,
+                    delay: 0.0,
+                    options: .CurveEaseInOut,
+                    animations: {
+                        self.view.frame.offset(dx: 0, dy: self.view.frame.height)
+                        self.view.backgroundColor = UIColor.whiteColor()
+                        println("fucking animation")
+                    }, completion: { finished in
+                        self.addAction(true)
+                })
             default:
                 break
             }
