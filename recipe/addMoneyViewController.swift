@@ -113,7 +113,7 @@ class addMoneyViewController: UIViewController {
                     options: .CurveEaseInOut,
                     animations: {
                         self.view.frame.offset(dx: 0, dy: -(self.view.frame.height))
-                        self.view.backgroundColor = UIColor.whiteColor()
+                        self.parentViewController.view.backgroundColor = UIColor.whiteColor()
                         println("fucking animation")
                     }, completion: { finished in
                         self.addAction(true)
@@ -125,7 +125,7 @@ class addMoneyViewController: UIViewController {
                     options: .CurveEaseInOut,
                     animations: {
                         self.view.frame.offset(dx: 0, dy: self.view.frame.height)
-                        self.view.backgroundColor = UIColor.whiteColor()
+                        self.parentViewController.view.backgroundColor = UIColor.whiteColor()
                         println("fucking animation")
                     }, completion: { finished in
                         self.addAction(true)
