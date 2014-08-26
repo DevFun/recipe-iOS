@@ -130,7 +130,6 @@ class addMoneyViewController: UIViewController {
                         self.addMoneyView.frame.offset(dx: 0, dy: self.addMoneyView.frame.height)
                         self.parentViewController.view.backgroundColor = UIColor.whiteColor()
                         println("down animation")
->>>>>>> setbackgroudColor
                     }, completion: { finished in
                         self.addAction(true)
                 })
