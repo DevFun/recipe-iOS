@@ -151,101 +151,84 @@
                         <viewControllerLayoutGuide type="top" id="NgG-Pw-rzK"/>
                         <viewControllerLayoutGuide type="bottom" id="xxQ-Im-6uq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="backgroudView" id="zBg-Yc-M7G" userLabel="backgroundView">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="addMoneyList" id="zBg-Yc-M7G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" restorationIdentifier="addMoneyView" translatesAutoresizingMaskIntoConstraints="NO" id="mZa-Y2-NnZ" userLabel="addMoneyView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="금액" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-E3-zaM">
-                                        <rect key="frame" x="40" y="96" width="44" height="28"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="33" y="142" width="42" height="29"/>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내역" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHV-HU-KMM">
-                                        <rect key="frame" x="40" y="187" width="44" height="28"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="33" y="211" width="42" height="29"/>
-                                        </variation>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="65Y-rM-SvM" userLabel="money">
-                                        <rect key="frame" x="163" y="187" width="172" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="99" y="142" width="266" height="30"/>
-                                        </variation>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="ATi-hr-BXq" userLabel="label">
-                                        <rect key="frame" x="163" y="95" width="172" height="30"/>
-                                        <accessibility key="accessibilityConfiguration" label="value"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="99" y="211" width="266" height="30"/>
-                                        </variation>
-                                    </textField>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rvp-fU-a0G">
-                                        <rect key="frame" x="40" y="342" width="305" height="162"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="429069756.300668">
-                                            <!--2014-08-07 02:02:36 +0000-->
-                                        </date>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="40" y="342" width="320" height="162"/>
-                                        </variation>
-                                    </datePicker>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIq-0Y-Biz">
-                                        <rect key="frame" x="40" y="288" width="44" height="28"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="33" y="292" width="42" height="29"/>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="8Pf-E3-zaM"/>
-                                        <exclude reference="vHV-HU-KMM"/>
-                                        <exclude reference="65Y-rM-SvM"/>
-                                        <exclude reference="ATi-hr-BXq"/>
-                                        <exclude reference="rvp-fU-a0G"/>
-                                        <exclude reference="uIq-0Y-Biz"/>
-                                    </mask>
-                                </variation>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내역" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHV-HU-KMM">
+                                <rect key="frame" x="40" y="187" width="44" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
-                                    <mask key="subviews">
-                                        <include reference="8Pf-E3-zaM"/>
-                                        <include reference="vHV-HU-KMM"/>
-                                        <include reference="65Y-rM-SvM"/>
-                                        <include reference="ATi-hr-BXq"/>
-                                        <include reference="rvp-fU-a0G"/>
-                                        <include reference="uIq-0Y-Biz"/>
-                                    </mask>
+                                    <rect key="frame" x="40" y="199" width="42" height="29"/>
                                 </variation>
-                            </view>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="65Y-rM-SvM" userLabel="label">
+                                <rect key="frame" x="163" y="187" width="172" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="101" y="199" width="266" height="30"/>
+                                </variation>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rvp-fU-a0G">
+                                <rect key="frame" x="40" y="342" width="305" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="429069756.300668">
+                                    <!--2014-08-07 02:02:36 +0000-->
+                                </date>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="329" width="327" height="162"/>
+                                </variation>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIq-0Y-Biz">
+                                <rect key="frame" x="40" y="288" width="44" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="261" width="42" height="29"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="금액" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-E3-zaM">
+                                <rect key="frame" x="40" y="96" width="44" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="139" width="42" height="29"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="ATi-hr-BXq" userLabel="money">
+                                <rect key="frame" x="163" y="95" width="172" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="value"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="101" y="138" width="266" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="mZa-Y2-NnZ"/>
+                                <exclude reference="vHV-HU-KMM"/>
+                                <exclude reference="65Y-rM-SvM"/>
+                                <exclude reference="rvp-fU-a0G"/>
+                                <exclude reference="uIq-0Y-Biz"/>
+                                <exclude reference="8Pf-E3-zaM"/>
+                                <exclude reference="ATi-hr-BXq"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="mZa-Y2-NnZ"/>
+                                <include reference="vHV-HU-KMM"/>
+                                <include reference="65Y-rM-SvM"/>
+                                <include reference="rvp-fU-a0G"/>
+                                <include reference="uIq-0Y-Biz"/>
+                                <include reference="8Pf-E3-zaM"/>
+                                <include reference="ATi-hr-BXq"/>
                             </mask>
                         </variation>
                     </view>
@@ -253,10 +236,9 @@
                     <navigationItem key="navigationItem" id="kxX-Nu-b0h"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addMoneyView" destination="mZa-Y2-NnZ" id="FIi-xO-6uD"/>
-                        <outlet property="dateValue" destination="rvp-fU-a0G" id="3fw-Qw-zak"/>
-                        <outlet property="labelValue" destination="ATi-hr-BXq" id="wKx-rP-Qdc"/>
-                        <outlet property="moneyValue" destination="65Y-rM-SvM" id="s9i-l7-VJg"/>
+                        <outlet property="dateValue" destination="rvp-fU-a0G" id="aAq-P7-PhM"/>
+                        <outlet property="labelValue" destination="65Y-rM-SvM" id="mnT-Uo-fQx"/>
+                        <outlet property="moneyValue" destination="ATi-hr-BXq" id="J0w-dG-8Lm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3r-Cp-3G2" userLabel="First Responder" sceneMemberID="firstResponder"/>
