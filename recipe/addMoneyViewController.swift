@@ -122,12 +122,12 @@ class addMoneyViewController: UIViewController {
                 })
             case UISwipeGestureRecognizerDirection.Down:
                 println("Down")
-                self.view.frame.offset(dx: 0, dy: self.view.frame.height)
+                self.parentViewController.view.backgroundColor = UIColor.whiteColor()
                 UIView.animateWithDuration(1.0,
                     delay: 0.0,
                     options: .CurveLinear,
                     animations: {
-                        self.parentViewController.view.backgroundColor = UIColor.whiteColor()
+                        self.view.frame.offset(dx: 0, dy: self.view.frame.height)
                         println("down animation")
                     }, completion: { finished in
                         self.addAction(true)
