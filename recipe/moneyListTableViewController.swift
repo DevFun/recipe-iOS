@@ -43,29 +43,30 @@ class moneyListTableViewController: UITableViewController, addMoneyViewControlle
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
     
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return self.ANum.count
     }
     
-    
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("moneyTable") as? UITableViewCell
         
         if cell == nil {
             cell = UITableViewCell(style: .Default, reuseIdentifier: "moneyTable")
         }
         
-        cell!.textLabel.text = "\(self.pocketNum), \(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row]), \(self.AStrDate[indexPath.row]), \(self.AMoney[indexPath.row])"
+        cell!.textLabel?.text = "\(self.pocketNum), \(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row]), \(self.AStrDate[indexPath.row]), \(self.AMoney[indexPath.row])"
         
-        return cell
+        
+        
+        return cell!
     }
     
     func tableInit(inputPocketNum: Int) {
@@ -118,10 +119,10 @@ class moneyListTableViewController: UITableViewController, addMoneyViewControlle
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if segue!.identifier == "addMoneySegue" {
+        if segue.identifier == "addMoneySegue" {
             var nextView = segue.destinationViewController as addMoneyViewController
             nextView.pocketNum = self.pocketNum
             nextView.delegate = self

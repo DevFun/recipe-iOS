@@ -42,19 +42,19 @@ class pocketListTableViewController: UITableViewController {
         alert.addButtonWithTitle("Cancel")
         alert.delegate = self
         alert.alertViewStyle = UIAlertViewStyle.PlainTextInput
-        var textField: UITextField = alert.textFieldAtIndex(0)
+        var textField: UITextField! = alert.textFieldAtIndex(0)
         textField.keyboardType = UIKeyboardType.Default
         textField.placeholder = "label"
         
         alert.show()
         
-        self.navigationController.popViewControllerAnimated(true)
+        self.navigationController!.popViewControllerAnimated(true)
         
     }
     
     func alertView(View: UIAlertView!, clickedButtonAtIndex: Int) {
         if clickedButtonAtIndex == 0 {
-            dbManager.insertPocket(View.textFieldAtIndex(0).text)
+            dbManager.insertPocket(View.textFieldAtIndex(0)!.text)
             
             var aTotal = dbManager.selectAtPocket()
             ANum = aTotal.num
@@ -70,34 +70,34 @@ class pocketListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return self.ANum.count
     }
 
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("pocketTable") as? UITableViewCell
         
         if cell == nil {
             cell = UITableViewCell(style: .Default, reuseIdentifier: "pocketTable")
         }
         
-        cell!.textLabel.text = "\(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row])"
+        cell!.textLabel!.text = "\(self.ANum[indexPath.row]), \(self.AStrLabel[indexPath.row])"
         
-        return cell
+        return cell!
     }
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
-        let nextView = self.storyboard.instantiateViewControllerWithIdentifier("moneyTableView") as moneyListTableViewController
+        let nextView = self.storyboard!.instantiateViewControllerWithIdentifier("moneyTableView") as moneyListTableViewController
         nextView.tableInit(indexPath.row+1)
-        self.navigationController.pushViewController(nextView, animated: true)
+        self.navigationController!.pushViewController(nextView, animated: true)
     }
 
     /*

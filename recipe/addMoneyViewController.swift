@@ -67,8 +67,8 @@ class addMoneyViewController: UIViewController {
             self.delegate?.endPopAction(self, pocketNum: self.pocketNum)
         }
         
-        self.navigationController.popToViewController(self, animated: true)   // Check this code
-        self.navigationController.popViewControllerAnimated(true)
+        self.navigationController!.popToViewController(self, animated: true)   // Check this code
+        self.navigationController!.popViewControllerAnimated(true)
     }
     func addAction(sender: UIButton) {
         /*
@@ -95,8 +95,8 @@ class addMoneyViewController: UIViewController {
             self.delegate?.endPopAction(self, pocketNum: self.pocketNum)
         }
         
-        self.navigationController.popToViewController(self, animated: true)   // Check this code
-        self.navigationController.popViewControllerAnimated(true)
+        self.navigationController!.popToViewController(self, animated: true)   // Check this code
+        self.navigationController!.popViewControllerAnimated(true)
         
     }
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -105,12 +105,12 @@ class addMoneyViewController: UIViewController {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Right:
                 println("Right")
-                self.navigationController.popViewControllerAnimated(true)
+                self.navigationController!.popViewControllerAnimated(true)
             case UISwipeGestureRecognizerDirection.Left:
                 println("Left")
             case UISwipeGestureRecognizerDirection.Up:
                 println("Up")
-                self.parentViewController.view.backgroundColor = UIColor.whiteColor()
+                self.parentViewController!.view.backgroundColor = UIColor.whiteColor()
                 UIView.animateWithDuration(1.0,
                     delay: 0.0,
                     options: .CurveEaseInOut,
@@ -122,7 +122,7 @@ class addMoneyViewController: UIViewController {
                 })
             case UISwipeGestureRecognizerDirection.Down:
                 println("Down")
-                self.parentViewController.view.backgroundColor = UIColor.whiteColor()
+                self.parentViewController!.view.backgroundColor = UIColor.whiteColor()
                 UIView.animateWithDuration(1.0,
                     delay: 0.0,
                     options: .CurveLinear,
